@@ -17,20 +17,35 @@ import javax.swing.text.SimpleAttributeSet
 import javax.swing.text.StyleConstants
 
 // ── Palette — JBColor(light, dark) adapts to IntelliJ theme ───────────────────
-private val C_PAGE   = JBColor(Color(0xf5, 0xf5, 0xf7), Color(0x0d, 0x11, 0x17))
-private val C_SHELL  = JBColor(Color(0xeb, 0xec, 0xf0), Color(0x16, 0x1b, 0x22))
-private val C_CARD   = JBColor(Color(0xe2, 0xe4, 0xea), Color(0x1c, 0x22, 0x2b))
-private val C_INPUT  = JBColor(Color(0xff, 0xff, 0xff), Color(0x13, 0x18, 0x20))
-private val C_BORDER = JBColor(Color(0xc8, 0xca, 0xd4), Color(0x2d, 0x35, 0x42))
-private val C_ACCENT = JBColor(Color(0x0e, 0x63, 0x9c), Color(0x37, 0x94, 0xff))
-private val C_STRONG = JBColor(Color(0x0a, 0x4f, 0x7a), Color(0x0e, 0x63, 0x9c))
-private val C_GREEN  = JBColor(Color(0x18, 0x9e, 0x48), Color(0x22, 0xc5, 0x5e))
-private val C_FG     = JBColor(Color(0x1a, 0x1a, 0x1a), Color(0xf0, 0xf2, 0xf5))
-private val C_FGMUT  = JBColor(Color(0x55, 0x5f, 0x70), Color(0x8b, 0x96, 0xab))
-private val C_SUCC_T = JBColor(Color(0x18, 0x7a, 0x38), Color(0x86, 0xef, 0xac))
-private val C_ERR_T  = JBColor(Color(0xb9, 0x1c, 0x1c), Color(0xfc, 0xa5, 0xa5))
-private val C_WARN_T = JBColor(Color(0x1d, 0x4e, 0x89), Color(0xc6, 0xe2, 0xff))
-private val C_URL    = JBColor(Color(0x02, 0x69, 0xa4), Color(0x7d, 0xd3, 0xfc))
+private val C_PAGE        = JBColor(Color(0xf5, 0xf5, 0xf7), Color(0x0d, 0x11, 0x17))
+private val C_SHELL       = JBColor(Color(0xeb, 0xec, 0xf0), Color(0x16, 0x1b, 0x22))
+private val C_CARD        = JBColor(Color(0xe2, 0xe4, 0xea), Color(0x1c, 0x22, 0x2b))
+private val C_INPUT       = JBColor(Color(0xff, 0xff, 0xff), Color(0x13, 0x18, 0x20))
+private val C_BORDER      = JBColor(Color(0xc8, 0xca, 0xd4), Color(0x2d, 0x35, 0x42))
+private val C_ACCENT      = JBColor(Color(0x0e, 0x63, 0x9c), Color(0x37, 0x94, 0xff))
+private val C_STRONG      = JBColor(Color(0x0a, 0x4f, 0x7a), Color(0x0e, 0x63, 0x9c))
+private val C_GREEN       = JBColor(Color(0x18, 0x9e, 0x48), Color(0x22, 0xc5, 0x5e))
+private val C_FG          = JBColor(Color(0x1a, 0x1a, 0x1a), Color(0xf0, 0xf2, 0xf5))
+private val C_FGMUT       = JBColor(Color(0x55, 0x5f, 0x70), Color(0x8b, 0x96, 0xab))
+private val C_SUCC_T      = JBColor(Color(0x18, 0x7a, 0x38), Color(0x86, 0xef, 0xac))
+private val C_ERR_T       = JBColor(Color(0xb9, 0x1c, 0x1c), Color(0xfc, 0xa5, 0xa5))
+private val C_WARN_T      = JBColor(Color(0x1d, 0x4e, 0x89), Color(0xc6, 0xe2, 0xff))
+private val C_URL         = JBColor(Color(0x02, 0x69, 0xa4), Color(0x7d, 0xd3, 0xfc))
+// secondary / utility
+private val C_BTN_SEC     = JBColor(Color(0xd4, 0xd6, 0xde), Color(0x22, 0x28, 0x35))
+private val C_BTN_DNGR    = JBColor(Color(0xfe, 0xe2, 0xe2), Color(0x2a, 0x10, 0x10))
+private val C_BTN_DNGR_BD = JBColor(Color(0xf8, 0x71, 0x71), Color(0x6b, 0x21, 0x21))
+private val C_LIVE_BTN    = JBColor(Color(0x16, 0x7a, 0x3a), Color(0x14, 0x60, 0x34))
+private val C_ACCT_CARD   = JBColor(Color(0xd8, 0xfb, 0xe8), Color(0x1a, 0x1e, 0x28))
+private val C_AVATAR      = JBColor(Color(0xc8, 0xcc, 0xd8), Color(0x2a, 0x32, 0x42))
+private val C_PILL_BG     = JBColor(Color(0xdc, 0xfc, 0xe8), Color(0x0c, 0x26, 0x18))
+private val C_PILL_BD     = JBColor(Color(0x86, 0xef, 0xac), Color(0x22, 0x55, 0x33))
+private val C_OFF_BADGE   = JBColor(Color(0xd4, 0xd6, 0xde), Color(0x22, 0x28, 0x35))
+private val C_DOT_IDLE    = JBColor(Color(0xb0, 0xb8, 0xc8), Color(0x3e, 0x46, 0x56))
+private val C_LOG_BG      = JBColor(Color(0xf4, 0xf5, 0xf7), Color(0x08, 0x0c, 0x12))
+private val C_LOG_FG      = JBColor(Color(0x1a, 0x1a, 0x1a), Color(0xc0, 0xc8, 0xd4))
+private val C_LOG_TS      = JBColor(Color(0x7a, 0x8a, 0xa0), Color(0x3e, 0x50, 0x6a))
+private val C_LOG_EMPTY   = JBColor(Color(0x7a, 0x8a, 0xa0), Color(0x55, 0x60, 0x72))
 
 // ── RoundButton — fully custom-rendered, truly rounded ────────────────────────
 private open class RoundButton(
@@ -87,7 +102,7 @@ private open class CardPanel(
 }
 
 // ── DotIndicator ──────────────────────────────────────────────────────────────
-private class DotIndicator(var col: Color = Color(0x3e, 0x46, 0x56)) : JPanel() {
+private class DotIndicator(var col: Color = C_DOT_IDLE) : JPanel() {
     init { isOpaque = false; preferredSize = Dimension(9, 9); minimumSize = Dimension(9, 9); maximumSize = Dimension(9, 9) }
     override fun paintComponent(g: Graphics) {
         val g2 = g.create() as Graphics2D
@@ -153,23 +168,23 @@ private fun primaryBtn(text: String, bg: Color = C_STRONG): RoundButton =
     }
 
 private fun dangerBtn(text: String): RoundButton =
-    RoundButton(text, Color(0x2a, 0x10, 0x10), C_ERR_T, radius = 12, borderCol = Color(0x6b, 0x21, 0x21)).apply {
+    RoundButton(text, C_BTN_DNGR, C_ERR_T, radius = 12, borderCol = C_BTN_DNGR_BD).apply {
         preferredSize = Dimension(9999, 38); maximumSize = Dimension(Int.MAX_VALUE, 38)
     }
 
 private fun ghostBtn(text: String, h: Int = 34): RoundButton =
-    RoundButton(text, Color(0x22, 0x28, 0x35), C_FG, radius = 10, borderCol = C_BORDER).apply {
+    RoundButton(text, C_BTN_SEC, C_FG, radius = 10, borderCol = C_BORDER).apply {
         font = font.deriveFont(Font.PLAIN, 12f)
         preferredSize = Dimension(9999, h); maximumSize = Dimension(Int.MAX_VALUE, h)
     }
 
 private fun halfGhostBtn(text: String): RoundButton =
-    RoundButton(text, Color(0x22, 0x28, 0x35), C_FG, radius = 10, borderCol = C_BORDER).apply {
+    RoundButton(text, C_BTN_SEC, C_FG, radius = 10, borderCol = C_BORDER).apply {
         font = font.deriveFont(Font.PLAIN, 12f); preferredSize = Dimension(9999, 34)
     }
 
 private fun miniBtn(text: String): RoundButton =
-    RoundButton(text, Color(0x22, 0x28, 0x35), C_FG, radius = 8, borderCol = C_BORDER).apply {
+    RoundButton(text, C_BTN_SEC, C_FG, radius = 8, borderCol = C_BORDER).apply {
         font = font.deriveFont(Font.PLAIN, 11f); preferredSize = Dimension(72, 28); maximumSize = Dimension(72, 28)
     }
 
@@ -205,7 +220,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
     private val urlLabel     = lbl("—", C_URL, 11f)
 
     // ── Live Server widgets ───────────────────────────────────────────────────
-    private val liveStartBtn  = primaryBtn("Open with Live Server", Color(0x14, 0x60, 0x34))
+    private val liveStartBtn  = primaryBtn("Open with Live Server", C_LIVE_BTN)
     private val livePreviewBtn = ghostBtn("Open with Mekong Preview", 36)
     private val liveStopBtn   = dangerBtn("Stop Live Server")
     private val liveCopyBtn   = halfGhostBtn("Copy")
@@ -219,7 +234,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
     private val loginBtn  = miniBtn("Log in")
     private val logoutBtn = miniBtn("Log out").apply { foreground = C_ERR_T }
 
-    private val acctCard = CardPanel(12, Color(0x1a, 0x1e, 0x28), C_BORDER)
+    private val acctCard = CardPanel(12, C_ACCT_CARD, C_BORDER)
     private val acctName = lbl("Not logged in", C_FG, 12f, bold = true)
     private val acctSub  = lbl("Login for a reserved subdomain", C_FGMUT, 11f)
 
@@ -237,7 +252,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
     // ── Log — terminal-style JTextPane ───────────────────────────────────────
     private val logPane = JTextPane().apply {
         isEditable = false; isOpaque = true
-        background = Color(0x08, 0x0c, 0x12); foreground = Color(0xc0, 0xc8, 0xd4)
+        background = C_LOG_BG; foreground = C_LOG_FG
         font = Font(Font.MONOSPACED, Font.PLAIN, 11)
         border = EmptyBorder(8, 12, 8, 12)
     }
@@ -332,7 +347,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
     // ── Account card ──────────────────────────────────────────────────────────
 
     private fun buildAccountSection(): JPanel {
-        val avatar = object : CardPanel(8, Color(0x2a, 0x32, 0x42), C_BORDER) {
+        val avatar = object : CardPanel(8, C_AVATAR, C_BORDER) {
             init { layout = BorderLayout(); preferredSize = Dimension(32, 32); minimumSize = Dimension(32, 32); maximumSize = Dimension(32, 32) }
         }
         avatar.add(JLabel("MK", SwingConstants.CENTER).apply { foreground = C_FG; font = font.deriveFont(Font.BOLD, 11f) }, BorderLayout.CENTER)
@@ -375,7 +390,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
         var r = 0
 
         // Port + Detect row
-        val detectBtn = RoundButton("Detect", Color(0x22, 0x28, 0x35), C_FG, 8, C_BORDER).apply {
+        val detectBtn = RoundButton("Detect", C_BTN_SEC, C_FG, 8, C_BORDER).apply {
             font = font.deriveFont(Font.PLAIN, 12f); preferredSize = Dimension(76, 36); maximumSize = Dimension(76, 36)
         }
         val portRow = JPanel(BorderLayout(8, 0)).apply {
@@ -411,7 +426,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
         tunnelIdleSection.add(startSec,  gbc(ir++, 8))
 
         // Active URL section
-        val activePill = sectionCard(Color(0x0c, 0x26, 0x18), Color(0x22, 0x55, 0x33), top = 11, bottom = 11)
+        val activePill = sectionCard(C_PILL_BG, C_PILL_BD, top = 11, bottom = 11)
         activePill.layout = BorderLayout(9, 0)
         activePill.border = EmptyBorder(11, 12, 11, 12)
         val gd = DotIndicator(C_GREEN)
@@ -456,7 +471,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
 
         // Status card
         val lsDot  = DotIndicator()
-        val offBadge = object : CardPanel(999, Color(0x22, 0x28, 0x35), C_BORDER) {
+        val offBadge = object : CardPanel(999, C_OFF_BADGE, C_BORDER) {
             init { layout = FlowLayout(FlowLayout.CENTER, 8, 3); preferredSize = Dimension(38, 22); maximumSize = Dimension(38, 22) }
         }
         offBadge.add(lbl("Off", C_FGMUT, 10f, bold = true))
@@ -487,7 +502,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
         lsIdleSection.add(lsStartSec,  gbc(ir++, 8))
 
         // Active section
-        val lsPill = sectionCard(Color(0x0c, 0x26, 0x18), Color(0x22, 0x55, 0x33), top = 11, bottom = 11)
+        val lsPill = sectionCard(C_PILL_BG, C_PILL_BD, top = 11, bottom = 11)
         lsPill.layout = BorderLayout(9, 0); lsPill.border = EmptyBorder(11, 12, 11, 12)
         val lgd  = DotIndicator(C_GREEN)
         val lgdW = JPanel(BorderLayout()).apply { isOpaque = false; border = EmptyBorder(3,0,0,0); add(lgd, BorderLayout.NORTH) }
@@ -540,18 +555,18 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
         headPanel.add(clearBtn, BorderLayout.EAST)
 
         // Seed empty message
-        appendLogText("No activity yet\n", Color(0x55, 0x60, 0x72))
+        appendLogText("No activity yet\n", C_LOG_EMPTY)
 
         val bodyScroll = JBScrollPane(logPane).apply {
             border = null; isOpaque = false; viewport.isOpaque = false
             preferredSize = Dimension(0, 150); minimumSize = Dimension(0, 150); maximumSize = Dimension(Int.MAX_VALUE, 150)
             verticalScrollBar.unitIncrement = 8
-            viewport.background = Color(0x08, 0x0c, 0x12)
+            viewport.background = C_LOG_BG
         }
 
         clearBtn.addActionListener {
             try { logDoc.remove(0, logDoc.length) } catch (_: Exception) {}
-            appendLogText("No activity yet\n", Color(0x55, 0x60, 0x72))
+            appendLogText("No activity yet\n", C_LOG_EMPTY)
         }
 
         alog.add(headPanel, gbc(ar++))
@@ -634,7 +649,7 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
         val url     = svc.publicUrl
         val live    = svc.isLiveRunning
 
-        mainDot.col = when { running && url != null -> C_GREEN; running -> C_ACCENT; live -> C_GREEN; else -> Color(0x3e, 0x46, 0x56) }
+        mainDot.col = when { running && url != null -> C_GREEN; running -> C_ACCENT; live -> C_GREEN; else -> C_DOT_IDLE }
         mainDot.repaint()
         mainLabel.text = when { running && url != null -> "Tunnel active"; running -> "Connecting…"; live -> "Live Server on"; else -> "No active tunnel" }
         mainSub.text   = when { url != null -> url!!; running -> "Waiting for public URL…"; live -> "http://localhost:${svc.livePort}"; else -> "Ready to connect" }
@@ -670,12 +685,12 @@ class MekongPanel(private val project: Project? = null) : JPanel(BorderLayout())
 
     private fun addLog(msg: String, level: String = "INFO") {
         SwingUtilities.invokeLater {
-            val tsColor  = Color(0x3e, 0x50, 0x6a)
+            val tsColor  = C_LOG_TS
             val msgColor = when (level) {
                 "OK"   -> C_SUCC_T
                 "WARN" -> C_WARN_T
                 "ERR"  -> C_ERR_T
-                else   -> Color(0xc0, 0xc8, 0xd4)
+                else   -> C_LOG_FG
             }
             // Remove "no activity" seed text on first real log
             if (logDoc.length > 0 && logDoc.getText(0, logDoc.length).startsWith("No activity")) {
