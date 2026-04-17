@@ -3,6 +3,7 @@ package dev.mekongtunnel
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.ide.CopyPasteManager
 import com.intellij.openapi.project.Project
+import com.intellij.ui.JBColor
 import com.intellij.ui.components.JBScrollPane
 import com.intellij.util.ui.JBUI
 import java.awt.*
@@ -15,21 +16,21 @@ import javax.swing.border.EmptyBorder
 import javax.swing.text.SimpleAttributeSet
 import javax.swing.text.StyleConstants
 
-// ── Palette ────────────────────────────────────────────────────────────────────
-private val C_PAGE   = Color(0x0d, 0x11, 0x17)
-private val C_SHELL  = Color(0x16, 0x1b, 0x22)
-private val C_CARD   = Color(0x1c, 0x22, 0x2b)
-private val C_INPUT  = Color(0x13, 0x18, 0x20)
-private val C_BORDER = Color(0x2d, 0x35, 0x42)
-private val C_ACCENT = Color(0x37, 0x94, 0xff)
-private val C_STRONG = Color(0x0e, 0x63, 0x9c)
-private val C_GREEN  = Color(0x22, 0xc5, 0x5e)
-private val C_FG     = Color(0xf0, 0xf2, 0xf5)
-private val C_FGMUT  = Color(0x8b, 0x96, 0xab)
-private val C_SUCC_T = Color(0x86, 0xef, 0xac)
-private val C_ERR_T  = Color(0xfc, 0xa5, 0xa5)
-private val C_WARN_T = Color(0xc6, 0xe2, 0xff)
-private val C_URL    = Color(0x7d, 0xd3, 0xfc)
+// ── Palette — JBColor(light, dark) adapts to IntelliJ theme ───────────────────
+private val C_PAGE   = JBColor(Color(0xf5, 0xf5, 0xf7), Color(0x0d, 0x11, 0x17))
+private val C_SHELL  = JBColor(Color(0xeb, 0xec, 0xf0), Color(0x16, 0x1b, 0x22))
+private val C_CARD   = JBColor(Color(0xe2, 0xe4, 0xea), Color(0x1c, 0x22, 0x2b))
+private val C_INPUT  = JBColor(Color(0xff, 0xff, 0xff), Color(0x13, 0x18, 0x20))
+private val C_BORDER = JBColor(Color(0xc8, 0xca, 0xd4), Color(0x2d, 0x35, 0x42))
+private val C_ACCENT = JBColor(Color(0x0e, 0x63, 0x9c), Color(0x37, 0x94, 0xff))
+private val C_STRONG = JBColor(Color(0x0a, 0x4f, 0x7a), Color(0x0e, 0x63, 0x9c))
+private val C_GREEN  = JBColor(Color(0x18, 0x9e, 0x48), Color(0x22, 0xc5, 0x5e))
+private val C_FG     = JBColor(Color(0x1a, 0x1a, 0x1a), Color(0xf0, 0xf2, 0xf5))
+private val C_FGMUT  = JBColor(Color(0x55, 0x5f, 0x70), Color(0x8b, 0x96, 0xab))
+private val C_SUCC_T = JBColor(Color(0x18, 0x7a, 0x38), Color(0x86, 0xef, 0xac))
+private val C_ERR_T  = JBColor(Color(0xb9, 0x1c, 0x1c), Color(0xfc, 0xa5, 0xa5))
+private val C_WARN_T = JBColor(Color(0x1d, 0x4e, 0x89), Color(0xc6, 0xe2, 0xff))
+private val C_URL    = JBColor(Color(0x02, 0x69, 0xa4), Color(0x7d, 0xd3, 0xfc))
 
 // ── RoundButton — fully custom-rendered, truly rounded ────────────────────────
 private open class RoundButton(
